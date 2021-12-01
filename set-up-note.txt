@@ -1,0 +1,53 @@
+Set up Notes:
+
+1) make a rep on your account
+
+2) enter the project folder and download server side package (sentimentAnalyzeServer)
+npm install -s
+ 
+ - and start the server
+
+ npm start
+
+
+3) install IBM Watson package & set up the .env file
+
+npm install -s ibm-watson@6.1.1#
+
+- create the credentials file in the server folder
+- Find this information in manager 
+- add the key and url to the code
+
+
+- install the dotenv package >>> for the NLU instance program from the IBM app
+
+npm install -s dotenv@10.0.0
+
+4) Define the instance and implement the method
+
+- Change the sentimentAnalyzerServer.js
+
+Type this code:
+
+    const NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1');
+    const { IamAuthenticator } = require('ibm-watson/auth');
+
+    const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
+        version: '2021-08-01',
+        authenticator: new IamAuthenticator ({
+            apikey: api_key
+        }),
+        serviceUrl: api_url
+    });
+    return naturalLanguageUnderstanding;
+
+    5) Create end points
+
+    6) Move to the Client Server Side
+
+- install the package
+npm  install -s
+
+
+7) Make changes on the app.js
+ 
